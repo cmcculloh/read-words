@@ -1,1 +1,17 @@
 /* CSS HERE */
+#word{
+    font-size: 3em;
+}
+.wordImg img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 25px;
+}
+
+
+
+#word{
+    text-align: center;
+}
+
+#container, #word, #progress { margin: 10px; }
