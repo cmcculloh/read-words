@@ -9,4 +9,3 @@ CSS & JS minifies and merges in-place.
 Port number and other settings changeable in Grunfile.js
 
 
-boat, box, car, dark, eat, eggs, fox, goat, green, ham, house, in, mouse, not, on, rain, Sam, say, see, train, tree
