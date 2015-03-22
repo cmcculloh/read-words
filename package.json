@@ -2,7 +2,7 @@
 	"name": "my-project-name",
 	"version": "0.1.0",
 	"scripts": {
-		"postinstall": "bower install"
+		"postinstall": "bower install",
 		"start": "grunt"
 	},
 	"devDependencies": {
