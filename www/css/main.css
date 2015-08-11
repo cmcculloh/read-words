@@ -5,6 +5,10 @@
 
 .wordImg {
     text-align: center;
+    width: 150px;
+    float: left;
+    height: 150px;
+    border: 1px solid #EEE;
 }
 .wordImg img {
     max-width: 100px;

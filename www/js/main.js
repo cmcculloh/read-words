@@ -121,78 +121,66 @@ define(function (require) {
 	];
 
 	var numCards = 3;
-	var chooseCard = function chooseCard(chosen, challengeWord) {
-		var nextCard = _.shuffle(words)[0];
-
-		var alreadyChosen = _.findIndex(chosen, function(word){
-			return word.name === challengeWord.name || word.name === nextCard.name;
-		});
-		if (alreadyChosen > 0) {
-			return chooseCard(chosen, challengeWord);
-		} else {
-			return nextCard;
-		}
+	var chooseWords = function chooseWords() {
+		var chosenWords = _.sample(words, numCards);
+		$challengeWord.text(_.sample(chosenWords, 1)[0].name);
+		populateCards(chosenWords);
+		return chosenWords;
 	}
 
-	var populateCards = function populateCards(challengeWord) {
+	var populateCards = function populateCards(words) {
 		$('#choices').empty();
-		var candidates = _.shuffle(words);
-		var shown = [];
 
-		var shownChallenge = false;
-		for(var i = 0; i<numCards; i++){
-			var card;
-			if((i === numCards-1 || Math.floor(Math.random() * numCards) === 0) && !shownChallenge){
-				shownChallenge = true;
-				cardN = _.findIndex(words, function(word){
-					return word.name === challengeWord.name;
-				});
-				card = words[cardN];
-			}else{
-				card = chooseCard(shown, challengeWord);
-			}
-			shown.push(card);
 
-			if (i % 3 === 0) {
+		for(var i = 0; i<words.length; i++){
+			// if (i % 3 === 0) {
+			if(i===0){
 				$('#choices').prepend('<div class="row"></div>');
 			}
 
-			var html = '<div class="wordImg col-xs-4"><img data-name="' + card.name + '" src="' + card.img + '" /></div>'
+			var html = '<div class="wordImg"><img data-name="' + words[i].name + '" src="' + words[i].img + '" /></div>'
 			$('#choices .row:first').append(html);
 		}
 		$('img').on('click', doScore);
 	}
 
 	var init = function init() {
-		populateCards(chooseWord());
+		chooseWords();
 	}
 
 	var $challengeWord = $('#word');
 	var score = 1;
 	var penalty = 3;
 	var $score = $('#score');
+	var scoreIncrement = 10;
 	var lastWord = '';
 	var medals = 0;
+	var totalScore = 0;
 	var doScore = function doScore(e) {
-		console.log('score', score);
 		var choice = $(e.currentTarget).data('name');
 		if (choice === $challengeWord.text()) {
 			$score.addClass('progress-bar-success').removeClass('progress-bar-danger');
-			score += 10;
+			score += scoreIncrement;
+			totalScore += scoreIncrement;
 			penalty = 3;
 			playSuccess();
-			$('#score').width(score + "%");
 
-			if(score > 100){
+			if(score >= 100){
 				score = 0;
+				scoreIncrement = Math.floor(scoreIncrement*.9);
 				addMedal();
-				numCards+=3;
+				numCards++;
 			}
 
-			populateCards(chooseWord());
+			$('#score').width(score + "%");
+
+
+
+			chooseWords();
 		} else {
 			$score.removeClass('progress-bar-success').addClass('progress-bar-danger');
 			score -= penalty;
+			totalScore -= penalty;
 			penalty = penalty * 2;
 			playError();
 			if (score < 1) {
@@ -201,6 +189,8 @@ define(function (require) {
 
 			$('#score').width(score + "%");
 		}
+
+		$('#score').text(totalScore);
 	};
 
 	var medals = [
@@ -214,19 +204,6 @@ define(function (require) {
 		$('#medals').append('<img src="' + medals[Math.floor(Math.random() * medals.length)] + '" />');
 
 	};
-
-	var chooseWord = function chooseWord() {
-		var nextWord = _.shuffle(words)[0];
-
-		if (nextWord === lastWord) {
-			return chooseWord();
-		} else {
-			lastWord = nextWord;
-			$challengeWord.text(lastWord.name);
-		}
-
-		return nextWord;
-	}
 
 	var playSuccess = function playSuccess() {
 		play_multi_sound('success');
