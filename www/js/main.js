@@ -4,172 +4,177 @@ define(function (require) {
 	var words = [
 		{
 			"name": "boy",
-			"img": "http://images.clipartpanda.com/boy-20clip-20art-RiAykqLLT.jpeg",
-			"tries": 0
+			"img": "http://images.clipartpanda.com/boy-20clip-20art-RiAykqLLT.jpeg"
 		},
 		{
 			"name": "bee",
-			"img": "http://bee-stings.net/bee_logo2.jpg",
-			"tries": 0
+			"img": "http://bee-stings.net/bee_logo2.jpg"
 		},
 		{
 			"name": "baby",
-			"img": "http://www.eonline.com/resize/500/500//eol_images/Entire_Site/2015021/rs_300x300-150121185511-600.New-Gerber-Baby.ms.012115.jpg",
-			"tries": 0
+			"img": "http://www.eonline.com/resize/500/500//eol_images/Entire_Site/2015021/rs_300x300-150121185511-600.New-Gerber-Baby.ms.012115.jpg"
 		},
 		{
 			"name": "girl",
-			"img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSLd6-BygSC-wYEDcoDcz7JW5eJ8MSKFkew4zuIdPoJqunKf_-P",
-			"tries": 0
+			"img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSLd6-BygSC-wYEDcoDcz7JW5eJ8MSKFkew4zuIdPoJqunKf_-P"
 		},
 		{
 			"name": "goo",
-			"img": "http://heidelblog.net/wp-content/uploads/2014/06/goo.jpg",
-			"tries": 0
+			"img": "http://heidelblog.net/wp-content/uploads/2014/06/goo.jpg"
 		},
 		{
 			"name": "God",
-			"img": "http://old.rejesus.co.uk/expressions/faces_jesus/facesj_media/b_sinai.jpg",
-			"tries": 0
+			"img": "http://old.rejesus.co.uk/expressions/faces_jesus/facesj_media/b_sinai.jpg"
 		},
 		{
 			"name": "green",
-			"img": "http://homemadehalloween.org/wp-content/uploads/2012/10/minecraft-creeper2.png",
-			"tries": 0
+			"img": "http://homemadehalloween.org/wp-content/uploads/2012/10/minecraft-creeper2.png"
 		},
 		{
 			"name": "creeper",
-			"img": "http://img3.wikia.nocookie.net/__cb20131206161228/minecraft/images/d/da/Minecraft_creeper.jpg",
-			"tries": 0
+			"img": "http://img3.wikia.nocookie.net/__cb20131206161228/minecraft/images/d/da/Minecraft_creeper.jpg"
 		},
 		{
 			"name": "egg",
-			"img": "http://upload.wikimedia.org/wikipedia/commons/0/02/Fried_egg,_sunny_side_up.jpg",
-			tries: 0
+			"img": "http://upload.wikimedia.org/wikipedia/commons/0/02/Fried_egg,_sunny_side_up.jpg"
+		},
+		{
+			"name": "tree",
+			"img": "https://farm5.staticflickr.com/4007/5075169756_d51008b274_q_d.jpg"
+		},
+		{
+			"name": "train",
+			"img": "https://farm4.staticflickr.com/3098/2295150040_186e240d4f_q_d.jpg"
+		},
+		{
+			"name": "sea",
+			"img": "https://farm7.staticflickr.com/6184/6088463794_1a8409bd33_q_d.jpg"
+		},
+		{
+			"name": "boat",
+			"img": "https://farm5.staticflickr.com/4077/4908578013_4f30104156_q_d.jpg"
+		},
+		{
+			"name": "box",
+			"img": "https://farm4.staticflickr.com/3390/3192570552_9f362cde65_q_d.jpg"
+		},
+		{
+			"name": "car",
+			"img": "https://farm3.staticflickr.com/2147/2157448457_d4788673b3_q_d.jpg"
+		},
+		{
+			"name": "dark",
+			"img": "https://farm1.staticflickr.com/92/333816710_0623edf1da_q_d.jpg"
+		},
+		{
+			"name": "eat",
+			"img": "https://farm4.staticflickr.com/3931/15381527766_b10eb0b9d4_q_d.jpg"
+		},
+		{
+			"name": "eggs",
+			"img": "https://farm4.staticflickr.com/3101/2735689978_949e3a02b1_q_d.jpg"
+		},
+		{
+			"name": "fox",
+			"img": "https://farm8.staticflickr.com/7456/11100243363_d804107fae_q_d.jpg"
+		},
+		{
+			"name": "goat",
+			"img": "https://farm9.staticflickr.com/8356/8280907415_0ec381b29d_q_d.jpg"
+		},
+		{
+			"name": "ham",
+			"img": "https://farm5.staticflickr.com/4119/4873400550_c1fa7f5172_q_d.jpg"
+		},
+		{
+			"name": "house",
+			"img": "https://farm2.staticflickr.com/1105/1189776958_8bc7c2113c_q_d.jpg"
 		},
 		// {
-		// 	"name": "tree",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "train",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "see",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "boat ",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "box",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "car",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "dark",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "eat",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "eggs",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "fox",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "goat",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "green",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "ham",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
-		// 	"name": "house",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
-		// {
 		// 	"name": "in",
-		// 	"img": "",
-		// 	"tries": 0
+		// 	"img": ""
 		// },
-		// {
-		// 	"name": "mouse",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
+		{
+			"name": "mouse",
+			"img": "https://farm3.staticflickr.com/2928/14614923808_d3c7fc58c9_q_d.jpg"
+		},
 		// {
 		// 	"name": "not",
-		// 	"img": "",
-		// 	"tries": 0
+		// 	"img": ""
 		// },
 		// {
 		// 	"name": "on",
-		// 	"img": "",
-		// 	"tries": 0
+		// 	"img": ""
 		// },
-		// {
-		// 	"name": "rain",
-		// 	"img": "",
-		// 	"tries": 0
-		// },
+		{
+			"name": "rain",
+			"img": "https://farm7.staticflickr.com/6182/6132260807_8f2acff010_q_d.jpg"
+		}
 		// {
 		// 	"name": "Sam",
-		// 	"img": "",
-		// 	"tries": 0
+		// 	"img": ""
 		// },
 		// {
 		// 	"name": "say",
-		// 	"img": "",
-		// 	"tries": 0
+		// 	"img": ""
 		// },
 	];
 
-	_.each(words, function (word, i, words) {
-		var html = '';
-		console.log(i % 3);
-		if (i % 3 === 0) {
-			$('#choices').prepend('<div class="row"></div>');
-		}
+	var numCards = 3;
+	var chooseCard = function chooseCard(chosen, challengeWord) {
+		var nextCard = _.shuffle(words)[0];
 
-		html += '<div class="wordImg col-xs-4"><img data-name="' + word.name + '" src="' + word.img + '" /></div>'
-		$('#choices .row:first').append(html);
-	});
+		var alreadyChosen = _.findIndex(chosen, function(word){
+			return word.name === challengeWord.name || word.name === nextCard.name;
+		});
+		if (alreadyChosen > 0) {
+			return chooseCard(chosen, challengeWord);
+		} else {
+			return nextCard;
+		}
+	}
+
+	var populateCards = function populateCards(challengeWord) {
+		$('#choices').empty();
+		var candidates = _.shuffle(words);
+		var shown = [];
+
+		var shownChallenge = false;
+		for(var i = 0; i<numCards; i++){
+			var card;
+			if((i === numCards-1 || Math.floor(Math.random() * numCards) === 0) && !shownChallenge){
+				shownChallenge = true;
+				cardN = _.findIndex(words, function(word){
+					return word.name === challengeWord.name;
+				});
+				card = words[cardN];
+			}else{
+				card = chooseCard(shown, challengeWord);
+			}
+			shown.push(card);
+
+			if (i % 3 === 0) {
+				$('#choices').prepend('<div class="row"></div>');
+			}
+
+			var html = '<div class="wordImg col-xs-4"><img data-name="' + card.name + '" src="' + card.img + '" /></div>'
+			$('#choices .row:first').append(html);
+		}
+		$('img').on('click', doScore);
+	}
+
+	var init = function init() {
+		populateCards(chooseWord());
+	}
+
 	var $challengeWord = $('#word');
 	var score = 1;
 	var penalty = 3;
 	var $score = $('#score');
 	var lastWord = '';
-	$('img').on('click', function (e) {
+	var medals = 0;
+	var doScore = function doScore(e) {
+		console.log('score', score);
 		var choice = $(e.currentTarget).data('name');
 		if (choice === $challengeWord.text()) {
 			$score.addClass('progress-bar-success').removeClass('progress-bar-danger');
@@ -177,7 +182,14 @@ define(function (require) {
 			penalty = 3;
 			playSuccess();
 			$('#score').width(score + "%");
-			chooseWord();
+
+			if(score > 100){
+				score = 0;
+				addMedal();
+				numCards+=3;
+			}
+
+			populateCards(chooseWord());
 		} else {
 			$score.removeClass('progress-bar-success').addClass('progress-bar-danger');
 			score -= penalty;
@@ -189,19 +201,32 @@ define(function (require) {
 
 			$('#score').width(score + "%");
 		}
-	});
+	};
+
+	var medals = [
+		'https://farm9.staticflickr.com/8011/7315871276_d9e6773eb1_q_d.jpg',
+		'https://farm8.staticflickr.com/7094/7268561194_950c53b257_q_d.jpg',
+		'https://farm9.staticflickr.com/8006/7268561274_9e43b68420_q_d.jpg',
+		'https://farm9.staticflickr.com/8151/7268561188_6590168fe9_q_d.jpg'
+	]
+	var addMedal = function addMedal() {
+
+		$('#medals').append('<img src="' + medals[Math.floor(Math.random() * medals.length)] + '" />');
+
+	};
 
 	var chooseWord = function chooseWord() {
-		var nextWord = _.shuffle(words)[0].name;
+		var nextWord = _.shuffle(words)[0];
 
 		if (nextWord === lastWord) {
-			chooseWord();
+			return chooseWord();
 		} else {
 			lastWord = nextWord;
-			$challengeWord.text(lastWord);
+			$challengeWord.text(lastWord.name);
 		}
+
+		return nextWord;
 	}
-	chooseWord();
 
 	var playSuccess = function playSuccess() {
 		play_multi_sound('success');
@@ -231,4 +256,6 @@ define(function (require) {
 
 		}
 	}
+
+	init();
 });
