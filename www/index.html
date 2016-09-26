@@ -1,61 +1,11 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Read Words</title>
-
-		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-		<link href="bower_components/fuelux/dist/css/fuelux.min.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="css/main.min.css">
-
-		<script src="bower_components/requirejs/require.js"></script>
-		<script>
-			(function () {
-				require.config({
-					config: {
-						moment: {
-							noGlobal: true
-						}
-					},
-					paths: {
-						jquery: 'bower_components/jquery-1.11.0/dist/jquery.min',
-						bootstrap: 'bower_components/bootstrap/dist/js/bootstrap.min',
-						fuelux: 'bower_components/fuelux/dist/js/fuelux.min',
-						moment: 'bower_components/moment/min/moment-with-langs.min', // comment out if you dont want momentjs to be default
-						underscore: 'bower_components/underscore/underscore'
-					},
-					shim: { 'bootstrap': { deps: ['jquery'],exports: 'bootstrap' } }
-				});
-				require(['fuelux', 'js/main']);
-			})();
-		</script>
-	</head>
-	<body class="fuelux">
-
-		<div class="container">
-			<h1>Words!</h1>
-<div class="container">
-<div id="choices">
-</div>
-<div class="row">
-    <div id="word" class="col-xs-12"></div>
-</div>
-<div class="row progress">
-  <div id="score" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
-    <span class="sr-only"></span>
-  </div>
-</div>
-<div id="score"></div>
-<div id="medals"></div>
-</div>
-
-
-<audio id="success" src="http://www.storiesinflight.com/html5/audio/piano_chord.wav" preload="auto"></audio>
-<audio id="error" src="http://www.storiesinflight.com/html5/audio/synth_vox.wav" preload="auto"></audio>
-
-		</div>
-	</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script src="js/bundle.js"></script>
+  </body>
 </html>
