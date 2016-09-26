@@ -1,0 +1,81 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Brinstar_data" version="1.3.0" audacityversion="2.0.2" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="50.8275733163" rate="44100.0">
+	<tags>
+		<tag name="ALBUM" value="Game Sound Museum ~Famicom Edition~ 12 Metroid"/>
+		<tag name="TITLE" value="Brinstar (Rock Stage)"/>
+		<tag name="TRACKNUMBER" value="3"/>
+		<tag name="COMMENTS" value="SDEX-0021"/>
+		<tag name="ARTIST" value="Hirokazu Tanaka"/>
+		<tag name="YEAR" value="2004"/>
+		<tag name="GENRE" value="Game"/>
+	</tags>
+	<wavetrack name="03 - Brinstar (Rock Stage)" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2112702">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000056.au" len="250865" min="-0.358608" max="0.300103" rms="0.058858"/>
+				</waveblock>
+				<waveblock start="250865">
+					<simpleblockfile filename="e000065c.au" len="262144" min="-0.504248" max="0.457508" rms="0.126997"/>
+				</waveblock>
+				<waveblock start="513009">
+					<simpleblockfile filename="e000070a.au" len="262144" min="-0.500206" max="0.443775" rms="0.136352"/>
+				</waveblock>
+				<waveblock start="775153">
+					<simpleblockfile filename="e000001d.au" len="262144" min="-0.553372" max="0.431549" rms="0.13165"/>
+				</waveblock>
+				<waveblock start="1037297">
+					<simpleblockfile filename="e0000cca.au" len="262144" min="-0.503471" max="0.446705" rms="0.129801"/>
+				</waveblock>
+				<waveblock start="1299441">
+					<simpleblockfile filename="e00000da.au" len="262144" min="-0.527682" max="0.441408" rms="0.131245"/>
+				</waveblock>
+				<waveblock start="1561585">
+					<simpleblockfile filename="e000045a.au" len="262144" min="-0.504747" max="0.488125" rms="0.128132"/>
+				</waveblock>
+				<waveblock start="1823729">
+					<simpleblockfile filename="e00001a4.au" len="152726" min="-0.513506" max="0.496612" rms="0.11677"/>
+				</waveblock>
+				<waveblock start="1976455">
+					<simpleblockfile filename="e0000f37.au" len="136247" min="-0.484791" max="0.42288" rms="0.108849"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="03 - Brinstar (Rock Stage)" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2112702">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000ecb.au" len="250865" min="-0.412392" max="0.272632" rms="0.0578"/>
+				</waveblock>
+				<waveblock start="250865">
+					<simpleblockfile filename="e0000fcd.au" len="262144" min="-0.494933" max="0.468827" rms="0.127642"/>
+				</waveblock>
+				<waveblock start="513009">
+					<simpleblockfile filename="e00003a9.au" len="262144" min="-0.485515" max="0.461048" rms="0.136776"/>
+				</waveblock>
+				<waveblock start="775153">
+					<simpleblockfile filename="e0000004.au" len="262144" min="-0.539198" max="0.464131" rms="0.13525"/>
+				</waveblock>
+				<waveblock start="1037297">
+					<simpleblockfile filename="e000043c.au" len="262144" min="-0.526138" max="0.45822" rms="0.138118"/>
+				</waveblock>
+				<waveblock start="1299441">
+					<simpleblockfile filename="e0000c28.au" len="262144" min="-0.505786" max="0.51303" rms="0.128992"/>
+				</waveblock>
+				<waveblock start="1561585">
+					<simpleblockfile filename="e0000723.au" len="262144" min="-0.537008" max="0.444231" rms="0.122779"/>
+				</waveblock>
+				<waveblock start="1823729">
+					<simpleblockfile filename="e00004fb.au" len="152726" min="-0.496545" max="0.464522" rms="0.107496"/>
+				</waveblock>
+				<waveblock start="1976455">
+					<simpleblockfile filename="e0000e27.au" len="136247" min="-0.518766" max="0.427128" rms="0.111211"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
