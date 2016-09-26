@@ -2,10 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: "./public/js/main.jsx",
+  entry: ['webpack/hot/dev-server', './public/js/main.jsx'],
   output: {
     path: __dirname,
-    filename: "public/js/bundle.js"
+    filename: "public/js/bundle.js",
   },
   resolve: {
     extensions: [

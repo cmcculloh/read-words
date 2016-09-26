@@ -63,7 +63,12 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	_reactDom2.default.render(_react2.default.createElement(_illustration2.default, { src: 'https://s3.amazonaws.com/ahoy-assets.twilio.com/global/images/wordmark.svg' }), document.getElementById('content'));
+	_reactDom2.default.render(_react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(_illustration2.default, { src: 'https://s3.amazonaws.com/ahoy-assets.twilio.com/global/images/wordmark.svg' }),
+		_react2.default.createElement(_illustration2.default, { src: 'https://facebook.github.io/react/img/logo.svg' })
+	), document.getElementById('content'));
 
 /***/ },
 /* 1 */

@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "scripts": {
     "start": "node server.js",
-    "dev": "webpack-dev-server --progress --colors --content-base public/"
+    "dev": "webpack-dev-server --progress --colors --hot"
   },
   "dependencies": {
     "babel": "^6.5.2",
