@@ -1,17 +1,34 @@
 {
   "name": "read-words",
   "version": "2.0.0",
-  "scripts": {},
+  "scripts": {
+    "start": "node server.js",
+    "dev": "webpack-dev-server --progress --colors --content-base public/"
+  },
   "dependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmcculloh/read-words.git"
+  },
+  "author": "Christopher McCulloh",
+  "bugs": {
+    "url": "https://github.com/cmcculloh/read-words/issues"
+  },
+  "homepage": "https://github.com/cmcculloh/read-words#readme"
 }
