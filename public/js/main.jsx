@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Illustration from './illustration';
+import Illustrations from './illustrations';
+
+const ill = [
+	{src: "https://s3.amazonaws.com/ahoy-assets.twilio.com/global/images/wordmark.svg"},
+	{src: "https://facebook.github.io/react/img/logo.svg"},
+	{src: "http://images.clipartpanda.com/boy-20clip-20art-RiAykqLLT.jpeg"}
+];
 
 ReactDOM.render(
 	<div>
-		<Illustration src="https://s3.amazonaws.com/ahoy-assets.twilio.com/global/images/wordmark.svg" />
-		<Illustration src="https://facebook.github.io/react/img/logo.svg" />
+		<Illustrations illustrations={ill} />
 	</div>,
 	document.getElementById('content')
 );

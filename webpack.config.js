@@ -5,7 +5,7 @@ module.exports = {
   entry: ['webpack/hot/dev-server', './public/js/main.jsx'],
   output: {
     path: __dirname,
-    filename: "public/js/bundle.js",
+    filename: "public/js/bundle.js"
   },
   resolve: {
     extensions: [
