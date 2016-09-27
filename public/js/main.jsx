@@ -8,6 +8,10 @@ import level1 from '../data/level1';
 
 const words = geh.concat(level1);
 
+const chooseWords = () => {
+
+}
+
 ReactDOM.render(
 	<div>
 		<Illustrations words={words} />

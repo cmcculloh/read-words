@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "./public/";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -144,14 +144,22 @@
 	
 	var _illustrations2 = _interopRequireDefault(_illustrations);
 	
+	var _green_eggs_and_ham = __webpack_require__(/*! ../data/green_eggs_and_ham */ 176);
+	
+	var _green_eggs_and_ham2 = _interopRequireDefault(_green_eggs_and_ham);
+	
+	var _level = __webpack_require__(/*! ../data/level1 */ 177);
+	
+	var _level2 = _interopRequireDefault(_level);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var illustrations = [{ src: "https://s3.amazonaws.com/ahoy-assets.twilio.com/global/images/wordmark.svg" }, { src: "https://facebook.github.io/react/img/logo.svg" }, { src: "http://images.clipartpanda.com/boy-20clip-20art-RiAykqLLT.jpeg" }];
+	var words = _green_eggs_and_ham2.default.concat(_level2.default);
 	
 	_reactDom2.default.render(_react2.default.createElement(
 		'div',
 		null,
-		_react2.default.createElement(_illustrations2.default, { illustrations: illustrations })
+		_react2.default.createElement(_illustrations2.default, { words: words })
 	), document.getElementById('content'));
 
 /***/ },
@@ -22056,23 +22064,29 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	console.log('loaded');
 	var Illustrations = _react2.default.createClass({
 		displayName: 'Illustrations',
 		propTypes: {
-			illustrations: _react.PropTypes.array
+			words: _react.PropTypes.array
 		},
-		renderIllustrations: function renderIllustrations(illustrations) {
-			return illustrations.map(function (illustration) {
-				return _react2.default.createElement(_illustration2.default, { src: illustration.src });
+		renderIllustrations: function renderIllustrations(words) {
+			return words.map(function (word) {
+				return _react2.default.createElement(_illustration2.default, { src: word.img, key: word.word });
 			});
 		},
 		render: function render() {
-			var illustrations = this.renderIllustrations(this.props.illustrations);
-			return { illustrations: illustrations };
+			var illustrations = this.renderIllustrations(this.props.words);
+	
+			return _react2.default.createElement(
+				'div',
+				null,
+				illustrations
+			);
 		}
 	});
 	
-	module.exports = _illustration2.default;
+	module.exports = Illustrations;
 
 /***/ },
 /* 175 */
@@ -22104,6 +22118,122 @@
 	});
 	
 	module.exports = Illustration;
+
+/***/ },
+/* 176 */
+/*!*******************************************!*\
+  !*** ./public/data/green_eggs_and_ham.js ***!
+  \*******************************************/
+/***/ function(module, exports) {
+
+	module.exports = [
+			{
+				word: "egg",
+				img: "http://upload.wikimedia.org/wikipedia/commons/0/02/Fried_egg,_sunny_side_up.jpg"
+			},
+			{
+				word: "tree",
+				img: "https://farm5.staticflickr.com/4007/5075169756_d51008b274_q_d.jpg"
+			},
+			{
+				word: "train",
+				img: "https://farm4.staticflickr.com/3098/2295150040_186e240d4f_q_d.jpg"
+			},
+			{
+				word: "sea",
+				img: "https://farm7.staticflickr.com/6184/6088463794_1a8409bd33_q_d.jpg"
+			},
+			{
+				word: "boat",
+				img: "https://farm5.staticflickr.com/4077/4908578013_4f30104156_q_d.jpg"
+			},
+			{
+				word: "box",
+				img: "https://farm4.staticflickr.com/3390/3192570552_9f362cde65_q_d.jpg"
+			},
+			{
+				word: "car",
+				img: "https://farm3.staticflickr.com/2147/2157448457_d4788673b3_q_d.jpg"
+			},
+			{
+				word: "dark",
+				img: "https://farm1.staticflickr.com/92/333816710_0623edf1da_q_d.jpg"
+			},
+			{
+				word: "eat",
+				img: "https://farm4.staticflickr.com/3931/15381527766_b10eb0b9d4_q_d.jpg"
+			},
+			{
+				word: "eggs",
+				img: "https://farm4.staticflickr.com/3101/2735689978_949e3a02b1_q_d.jpg"
+			},
+			{
+				word: "fox",
+				img: "https://farm8.staticflickr.com/7456/11100243363_d804107fae_q_d.jpg"
+			},
+			{
+				word: "goat",
+				img: "https://farm9.staticflickr.com/8356/8280907415_0ec381b29d_q_d.jpg"
+			},
+			{
+				word: "ham",
+				img: "https://farm5.staticflickr.com/4119/4873400550_c1fa7f5172_q_d.jpg"
+			},
+			{
+				word: "house",
+				img: "https://farm2.staticflickr.com/1105/1189776958_8bc7c2113c_q_d.jpg"
+			},
+			{
+				word: "mouse",
+				img: "https://farm3.staticflickr.com/2928/14614923808_d3c7fc58c9_q_d.jpg"
+			},
+			{
+				word: "rain",
+				img: "https://farm7.staticflickr.com/6182/6132260807_8f2acff010_q_d.jpg"
+			}
+		]
+
+/***/ },
+/* 177 */
+/*!*******************************!*\
+  !*** ./public/data/level1.js ***!
+  \*******************************/
+/***/ function(module, exports) {
+
+	module.exports = [
+		{
+			word: "boy",
+			img: "http://images.clipartpanda.com/boy-20clip-20art-RiAykqLLT.jpeg"
+		},
+		{
+			word: "bee",
+			img: "http://bee-stings.net/bee_logo2.jpg"
+		},
+		{
+			word: "baby",
+			img: "http://www.eonline.com/resize/500/500//eol_images/Entire_Site/2015021/rs_300x300-150121185511-600.New-Gerber-Baby.ms.012115.jpg"
+		},
+		{
+			word: "girl",
+			img: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSLd6-BygSC-wYEDcoDcz7JW5eJ8MSKFkew4zuIdPoJqunKf_-P"
+		},
+		{
+			word: "goo",
+			img: "http://heidelblog.net/wp-content/uploads/2014/06/goo.jpg"
+		},
+		{
+			word: "God",
+			img: "http://old.rejesus.co.uk/expressions/faces_jesus/facesj_media/b_sinai.jpg"
+		},
+		{
+			word: "green",
+			img: "http://homemadehalloween.org/wp-content/uploads/2012/10/minecraft-creeper2.png"
+		},
+		{
+			word: "creeper",
+			img: "http://img3.wikia.nocookie.net/__cb20131206161228/minecraft/images/d/da/Minecraft_creeper.jpg"
+		}
+	]
 
 /***/ }
 /******/ ]);
