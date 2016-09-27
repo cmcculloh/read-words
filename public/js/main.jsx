@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom';
 
 import Illustrations from './illustrations';
 
-const ill = [
-	{src: "https://s3.amazonaws.com/ahoy-assets.twilio.com/global/images/wordmark.svg"},
-	{src: "https://facebook.github.io/react/img/logo.svg"},
-	{src: "http://images.clipartpanda.com/boy-20clip-20art-RiAykqLLT.jpeg"}
-];
+import geh from '../data/green_eggs_and_ham';
+import level1 from '../data/level1';
+
+const words = geh.concat(level1);
 
 ReactDOM.render(
 	<div>
-		<Illustrations illustrations={ill} />
+		<Illustrations words={words} />
 	</div>,
 	document.getElementById('content')
 );
