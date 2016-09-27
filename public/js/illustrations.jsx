@@ -14,9 +14,9 @@ const Illustrations = React.createClass({
 		return words.map(
 			(word) =>
 				<Illustration
-					src={word.img}
+					word={word}
 					key={word.word}
-					handleGuess={this.props.handleGuess.bind(null, word)}
+					handleGuess={this.props.handleGuess}
 				/>
 		);
 	},
