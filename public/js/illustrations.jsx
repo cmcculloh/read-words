@@ -1,16 +1,24 @@
-import React, {PropTypes} from 'react';
-import ReactDOM from 'react-dom';
+import React, { PropTypes } from 'react';
 import Illustration from './illustration';
-console.log('loaded');
+
 const Illustrations = React.createClass({
 	displayName: 'Illustrations',
 	propTypes: {
-		words: PropTypes.array
+		words: PropTypes.arrayOf(PropTypes.shape({
+			word: PropTypes.string.isRequired,
+			img: PropTypes.string.isRequired
+		})).isRequired,
+		handleGuess: PropTypes.func.isRequired
 	},
 	renderIllustrations (words) {
-		return words.map((word) => {
-			return <Illustration src={word.img} key={word.word} />
-		});
+		return words.map(
+			(word) =>
+				<Illustration
+					src={word.img}
+					key={word.word}
+					handleGuess={this.props.handleGuess.bind(null, word)}
+				/>
+		);
 	},
 	render () {
 		const illustrations = this.renderIllustrations(this.props.words);
