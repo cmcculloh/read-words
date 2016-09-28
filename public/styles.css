@@ -5,3 +5,41 @@ img {
 #content {
 	text-align: center;
 }
+
+.samus {
+	width: 26px;
+	height: 41px;
+	overflow: hidden;
+	background-image: url(img/sprites/samus.png);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.samus.running1 {
+	background-position-x: -74px;
+}
+
+.samus.running2 {
+	background-position-x: -99px;
+}
+
+.samus.running3 {
+	background-position-x: -123px;
+}
+
+.samus.shooting1 {
+	background-position-x: -74px;
+}
+
+.samus.shooting2 {
+	background-position-x: -99px;
+}
+
+.samus.shooting3 {
+	background-position-x: -124px;
+}
+
+.samus.shooting1, .samus.shooting2, .samus.shooting3 {
+	background-position-y: -41px;
+}

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import Illustrations from './illustrations';
+import Samus from './samus';
 
 import geh from '../data/green_eggs_and_ham';
 import level1 from '../data/level1';
@@ -24,7 +25,8 @@ const Game = React.createClass({
 			wordPool,
 			currentNumberWords: startingNumberWords,
 			currentWords,
-			currentWord
+			currentWord,
+			samusAction: 'standing'
 		};
 	},
 
@@ -38,14 +40,30 @@ const Game = React.createClass({
 		};
 	},
 
+	handleSuccess () {
+		this.props.playSound('success');
+
+		this.setState({
+			samusAction: 'shooting'
+		});
+	},
+
+	handleError () {
+		this.props.playSound('error');
+
+		this.setState({
+			samusAction: 'running'
+		});
+	},
+
 	handleGuess (choice) {
 		if (choice.word === this.state.currentWord.word) {
-			this.props.playSound('success');
+			this.handleSuccess();
 
 			const { currentWords, currentWord } = this.chooseWords(this.state.wordPool, this.state.currentNumberWords);
 			this.setState({ currentWords, currentWord });
 		} else {
-			this.props.playSound('error');
+			this.handleError();
 		}
 	},
 
@@ -54,6 +72,7 @@ const Game = React.createClass({
 			<div>
 				<h1>{this.state.currentWord.word}</h1>
 				<Illustrations words={this.state.currentWords} handleGuess={this.handleGuess} />
+				<Samus action={this.state.samusAction} />
 			</div>
 		);
 	}
