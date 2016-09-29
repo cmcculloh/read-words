@@ -21483,15 +21483,23 @@
 
 	var _illustrations2 = _interopRequireDefault(_illustrations);
 
-	var _green_eggs_and_ham = __webpack_require__(176);
+	var _samus = __webpack_require__(176);
+
+	var _samus2 = _interopRequireDefault(_samus);
+
+	var _floor = __webpack_require__(177);
+
+	var _floor2 = _interopRequireDefault(_floor);
+
+	var _green_eggs_and_ham = __webpack_require__(178);
 
 	var _green_eggs_and_ham2 = _interopRequireDefault(_green_eggs_and_ham);
 
-	var _level = __webpack_require__(177);
+	var _level = __webpack_require__(179);
 
 	var _level2 = _interopRequireDefault(_level);
 
-	var _lodash = __webpack_require__(178);
+	var _lodash = __webpack_require__(180);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -21519,7 +21527,8 @@
 				wordPool: wordPool,
 				currentNumberWords: startingNumberWords,
 				currentWords: currentWords,
-				currentWord: currentWord
+				currentWord: currentWord,
+				samusAction: 'standing'
 			};
 		},
 		chooseWords: function chooseWords(words, numberWordsToChoose) {
@@ -21531,9 +21540,25 @@
 				currentWord: currentWord
 			};
 		},
+		handleSuccess: function handleSuccess() {
+			this.props.playSound('success');
+
+			this.setState({
+				samusAction: 'shooting',
+				floorDirection: 'forward'
+			});
+		},
+		handleError: function handleError() {
+			this.props.playSound('error');
+
+			this.setState({
+				samusAction: 'running',
+				floorDirection: 'forward'
+			});
+		},
 		handleGuess: function handleGuess(choice) {
 			if (choice.word === this.state.currentWord.word) {
-				this.props.playSound('success');
+				this.handleSuccess();
 
 				var _chooseWords2 = this.chooseWords(this.state.wordPool, this.state.currentNumberWords);
 
@@ -21542,7 +21567,7 @@
 
 				this.setState({ currentWords: currentWords, currentWord: currentWord });
 			} else {
-				this.props.playSound('error');
+				this.handleError();
 			}
 		},
 		render: function render() {
@@ -21554,7 +21579,9 @@
 					null,
 					this.state.currentWord.word
 				),
-				_react2.default.createElement(_illustrations2.default, { words: this.state.currentWords, handleGuess: this.handleGuess })
+				_react2.default.createElement(_illustrations2.default, { words: this.state.currentWords, handleGuess: this.handleGuess }),
+				_react2.default.createElement(_samus2.default, { action: this.state.samusAction }),
+				_react2.default.createElement(_floor2.default, { direction: this.state.floorDirection })
 			);
 		}
 	});
@@ -21643,6 +21670,138 @@
 
 /***/ },
 /* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var sprites = {
+		running: {
+			maxFrames: 3
+		},
+		standing: {
+			maxFrames: 1
+		},
+		jumping: {
+			maxFrames: 5
+		},
+		shooting: {
+			maxFrames: 3
+		}
+	};
+
+	var Samus = _react2.default.createClass({
+		displayName: 'Samus',
+		propTypes: {
+			action: _react.PropTypes.string
+		},
+		getInitialState: function getInitialState() {
+			return {
+				frame: 0,
+				previousAction: null
+			};
+		},
+		componentWillReceiveProps: function componentWillReceiveProps() {
+			if (this.props.action !== this.state.previousAction) {
+				this.setState({
+					previousAction: this.props.action
+				});
+			}
+
+			this.actionLoop = window.setTimeout(this.updateFrame, 1);
+		},
+		updateFrame: function updateFrame() {
+			var currentFrame = this.state.frame;
+
+			currentFrame += 1;
+			if (currentFrame > sprites[this.props.action].maxFrames) {
+				currentFrame = 1;
+			}
+
+			this.setState({ frame: currentFrame });
+
+			window.clearTimeout(this.actionLoop);
+			this.actionLoop = window.setTimeout(this.updateFrame, 75);
+		},
+		render: function render() {
+			var actionClass = this.props.action + this.state.frame;
+			var altText = 'samus ' + this.props.action;
+			var classes = altText + ' ' + actionClass;
+
+			return _react2.default.createElement('div', { alt: altText, className: classes });
+		}
+	});
+
+	module.exports = Samus;
+
+/***/ },
+/* 177 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var sprites = {
+		forward: {
+			maxFrames: 3
+		}
+	};
+
+	var Floor = _react2.default.createClass({
+		displayName: 'Floor',
+		propTypes: {
+			direction: _react.PropTypes.string
+		},
+		getInitialState: function getInitialState() {
+			return {
+				frame: 0,
+				previousDirection: null
+			};
+		},
+		componentWillReceiveProps: function componentWillReceiveProps() {
+			if (this.props.direction !== this.state.previousDirection) {
+				this.setState({
+					previousDirection: this.props.direction
+				});
+			}
+
+			this.actionLoop = window.setTimeout(this.updateFrame, 1);
+		},
+		updateFrame: function updateFrame() {
+			var currentFrame = this.state.frame;
+
+			currentFrame += 1;
+			if (currentFrame > sprites[this.props.direction].maxFrames) {
+				currentFrame = 1;
+			}
+
+			this.setState({ frame: currentFrame });
+
+			window.clearTimeout(this.actionLoop);
+			this.actionLoop = window.setTimeout(this.updateFrame, 75);
+		},
+		render: function render() {
+			var altText = 'floor';
+			var classes = altText + ' ' + this.props.direction + this.state.frame;
+
+			return _react2.default.createElement('div', { alt: altText, className: classes });
+		}
+	});
+
+	module.exports = Floor;
+
+/***/ },
+/* 178 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -21713,7 +21872,7 @@
 		]
 
 /***/ },
-/* 177 */
+/* 179 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -21752,7 +21911,7 @@
 	]
 
 /***/ },
-/* 178 */
+/* 180 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**

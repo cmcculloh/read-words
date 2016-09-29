@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import Illustrations from './illustrations';
 import Samus from './samus';
+import Floor from './floor';
 
 import geh from '../data/green_eggs_and_ham';
 import level1 from '../data/level1';
@@ -44,7 +45,8 @@ const Game = React.createClass({
 		this.props.playSound('success');
 
 		this.setState({
-			samusAction: 'shooting'
+			samusAction: 'shooting',
+			floorDirection: 'forward'
 		});
 	},
 
@@ -52,7 +54,8 @@ const Game = React.createClass({
 		this.props.playSound('error');
 
 		this.setState({
-			samusAction: 'running'
+			samusAction: 'running',
+			floorDirection: 'forward'
 		});
 	},
 
@@ -73,6 +76,7 @@ const Game = React.createClass({
 				<h1>{this.state.currentWord.word}</h1>
 				<Illustrations words={this.state.currentWords} handleGuess={this.handleGuess} />
 				<Samus action={this.state.samusAction} />
+				<Floor direction={this.state.floorDirection} />
 			</div>
 		);
 	}

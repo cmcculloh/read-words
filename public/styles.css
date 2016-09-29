@@ -43,3 +43,25 @@ img {
 .samus.shooting1, .samus.shooting2, .samus.shooting3 {
 	background-position-y: -41px;
 }
+
+.floor {
+	width: 200px;
+	height: 16px;
+	overflow: hidden;
+	background-repeat: x;
+	display: block;
+	background-image: url(img/sprites/basic-floor-16x16.png);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.forward1 {
+	background-position-x: 10px;
+}
+.forward2 {
+	background-position-x: 5px;
+}
+.forward3 {
+	background-position-x: 0px;
+}
+
